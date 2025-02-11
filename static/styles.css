@@ -1,0 +1,122 @@
+/* styles.css */
+
+/* General styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
+    color: #333;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* Centered container */
+  .container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .container:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Heading */
+  h1 {
+    font-size: 1.8em;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  /* Flash messages */
+  .flash-messages {
+    margin-bottom: 15px;
+  }
+  
+  .flash-message {
+    background: #e74c3c;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+  
+  /* Custom File Input */
+  .file-input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .file-input-label {
+    background: #3498db;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.3s ease;
+    display: inline-block;
+  }
+  
+  .file-input-label:hover {
+    background: #2980b9;
+  }
+  
+  .file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  /* File name display */
+  #file-name {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 8px;
+  }
+  
+  /* Submit button */
+  button {
+    background: #2ecc71;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+    display: block;
+  }
+  
+  button:hover {
+    background: #27ae60;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .container {
+      width: 90%;
+    }
+  
+    h1 {
+      font-size: 1.6em;
+    }
+  }
+  

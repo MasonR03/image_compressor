@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Upload & Compress Your Images</h1>
+        
+        <!-- Display flash messages -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="flash-messages">
+              {% for message in messages %}
+                <p class="flash-message">{{ message }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <!-- The form allows multiple file uploads -->
+        <form method="POST" action="/" enctype="multipart/form-data">
+            <div class="file-input-wrapper">
+                <label for="files" class="file-input-label">📁 Choose Images</label>
+                <input type="file" id="files" name="files" class="file-input" multiple required>
+                <p id="file-name">No files chosen</p>
+            </div>
+            <br>
+            <button type="submit">🚀 Compress & Download</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("files").addEventListener("change", function() {
+            let fileNameDisplay = document.getElementById("file-name");
+            let files = this.files;
+            if (files.length > 0) {
+                fileNameDisplay.textContent = `${files.length} file(s) selected`;
+            } else {
+                fileNameDisplay.textContent = "No files chosen";
+            }
+        });
+    </script>
+
+</body>
+</html>
